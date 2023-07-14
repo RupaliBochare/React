@@ -1,0 +1,69 @@
+Q1. What is NPM 
+    NPM is package manager for JavaScript programming language and its open source manage by npm, Its also called default package manager.
+    It's a package manager that allows you to install and manage javascript packages.
+
+Q2. What is Parcel /Webpack ? Why do we need it?
+    Parcel and webpack are the bundlers used for the Javascript or Typescript code that help us to clean, minify, make code compact
+    internal use babel to context JSX to HTML
+    Having some feature such as 
+    Development - support Hot reloading, Caching ,Dev server
+    Production  -- minification, tree shaking, compression, content , hashing 
+    Target -- How to compile code into multiple target
+    Bundle inline
+
+Q3. What is .parcel/Cache?
+    its store or we can say cached optimized version of bundle i.e javascript file, Images, css.
+    using this parcel is doing fast bundling 
+
+    using this only changed assets will be reprocess and bundle so that it avoid re bundling whole project 
+
+Q4. What is 'npx'?
+    Its package runner. Basically javaScript package runner.
+
+Q5. What is difference between 'dependencies' and 'devDependencies'?
+    Dependencies are required to run application that we can list under dependencies
+    and devDependencies which are only required to run application on dev mode like local setup.
+
+ Q.6 What is Tree shaking?
+    Tree shaking is process to remove unused code from final bundle when bundling process happens. (webpack, babel are bundlers)
+
+    Tree shaking relies on the JavaScript module system which uses static import amd exports which help to determine which code is used and which is not.
+
+Q.7 What is Hot Module Replacement?
+    its only  used in Dev environment as its allow developer to make changes to their code during development and those changes reflected in the application without any manually refresh.
+    Its make development process speed up.
+
+Q.8 List down your favorites 5 superpowers of Parcel and describe any 3 of them in your own words
+
+    1 HMR 
+    2.Caching 
+    3 Tree shaking
+    4.Light-fast binding -> code spitting, Multicore Process, Dependency Graph Analysis
+    5.Zero configuration
+    6. Automatic Asset Resolution
+    7. Images optimization 
+
+Q.9. What is '.gitignore'?What should we add and not add into it?
+    In a .gitignore file, you specify patterns to match the files or directories you want to ignore. 
+
+Q.10  What is the difference between 'package.json' and 'package-lock.json'
+   package json - Its primary configuration file, it contain project related metadata name, version, author, description, license and list of dependencies , dev dependencies and script tag which define command to execute task
+   
+ package.lock - its automatically generated and maintain by npm when any package get installed or updated
+                - Its include exact version of dependencies installed. It help for same version of package are installed on different environments.
+
+
+Q.11 Why should I not modify 'package-lock.json'? 
+    
+    The 'package-lock.json' file is meant to be committed to version control systems along with your other project files. By committing it, you ensure that all team members have access to the exact same set of dependencies. If you modify the file manually, it can lead to conflicts and discrepancies between different environments or team members.
+
+Q.12 What is 'node_modules'?Is it a good idea to push that on git?
+    node_modules' is a directory created by Node.js package managers like npm or Yarn when you install dependencies for a project. It contains all the third-party libraries and packages that your project relies on. These packages are specified in the 'package.json' file, and the package manager uses the 'node_modules' directory to store and manage them.
+    Using package.json and lock.json we can installed same version of dependencies so it not recommended to commit node modules so better to add in gitingore.
+
+Q.13 What is the 'dist' folder?
+    dist folder contain complied code, optimized asset, index.html and it get created in build process. Basically the output of build.
+
+
+Q.14 What is 'browserlists'
+    configuration file used in web development projects to specify the target browsers and environments that your code should support. It helps determine which CSS and JavaScript features and polyfills should be used during the build process to ensure compatibility with specific browsers and versions.
