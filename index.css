@@ -1,0 +1,24 @@
+.container {
+    display: flex; /* create flexbox layout*/
+    justify-content: space-between; /* sets the horizontal alignment  places space between the items, pushing them to the edges of the container*/
+    align-items: center; /* sets the vertical alignment */
+}
+
+/*The key difference between space-around and space-evenly 
+is the distribution of space around the items. With space-around, 
+half of the space is placed before the first item and half after the last item, 
+while with space-evenly, the space is evenly distributed between and around all items.
+*/
+
+.left-image {
+    order: 1; /*Places the left image first */
+
+}
+
+.center-input {
+    order: 2; /*Places the input in the center*/
+}
+
+.right-image {
+    order: 3; /*Places the rigt image last*/
+}

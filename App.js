@@ -35,4 +35,26 @@ const parent = React.createElement("div", {id: "parent"}, [
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+const heading = <h1 className="head">Namaste React -- JSX 1st code</h1>;
+ const Title2 = function () {
+    (<h1> Namaste React using normal function </h1>)
+ } 
+const HeadingComponent = () => (
+    <div id="container">
+        <Title />
+        
+        <h2>{10+20}</h2>
+        <h1>Namaste React by Rupali Bochare</h1>
+    </div>
+    
+)
+
+const Title = () => (<h1> Namaste React using JSX as title</h1>)
+
+// function component 
+ // can create using arrow and normal function also 
+ //i.e 
+// normal function as functional component will not work
+
+
+root.render(<HeadingComponent />);
