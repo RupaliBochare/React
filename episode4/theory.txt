@@ -1,0 +1,138 @@
+Q.1 is Jsx mandatory for React?
+No its not. we can create element with following way
+const element = React.createElement('div', null, 'Hello, world')
+with JSX <div> Hello  {name}</div>
+
+Q2.Is ES6 mandatory for React 
+no it not but recommended React itself does not depend on ES6 features, but using ES6 can significantly improve the development experience and code quality.
+No it not. You need to use Babel and webpack or browserify to transpile your code into ES5 which most of the browsers understand
+
+// common used es6 features 
+    1. Arrow function
+    const getTenant =() => {  }
+    2. Destructing
+        const [tenantDetails, setTenantDetails] = useState('');
+
+        Destructuring is used to extract values from arrays or properties from objects into variables.
+        Spread is used to clone or merge arrays and objects.
+        Spread operator 
+        const arr1 = [1, 2, 3]
+        const arr2 = [...arr1, 1,2, 3 ]
+        // Destruction 
+        const arr1 = [1,2, 3,4]
+        const [first, second] = arr1;
+        //first = 1
+        // second = 2
+
+    3. template literal
+        const name = "John";
+    const greeting = `Hello, ${name}!`;
+    4. Classes
+        class MyComponent extends React.Component {
+    // ...
+    }
+
+Q3.{TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent > </TitleComponent>} in JSX
+
+  a. {Component }  -- insert javascript expression  inside JSX
+  b. {<Component/>} -- used to render component inside Jsx
+  c. {<Component></Component>} -- used when we wrap multiple element inside same component.
+  
+Q4. How can i write comment in JSX
+
+        // This is a single-line comment in JSX
+    const element = <div>Hello, World!</div>;
+
+    multiple line
+    {/* This is a
+    multi-line comment in JSX */}
+
+Q5. What is <React.Fragment></React.Fragment> and <></> ?
+
+    When react component want return multiple element then Fragment let you group a list of 
+    children without adding wrapping parent  node to the development
+    e.x 
+    const MyComponent = () => {
+        <> 
+        <p>child1</p>
+        <p>child2</p>
+        </>
+    }
+
+    other way 
+
+    const MyComponent =() => {
+        <React.Fragment>
+            <p>child1</p>
+            <p>child2</p>
+        </React.Fragment>
+    }
+
+    const MyList = () => {
+    const items = ["Item 1", "Item 2", "Item 3"];
+
+    return (
+        <>
+        {items.map((item, index) => (
+            <p key={index}>{item}</p>
+        ))}
+        </>
+    );
+    };
+
+Q 6. What is Virtual DOM,
+     Virtual DOM is an in-memory representation of the actual DOM. 
+
+https://legacy.reactjs.org/docs/faq-internals.html
+
+ Reconciliation - Finding difference between virtual Dom and Real dom is nothing but the Reconciliation process.
+
+    When a React component’s
+     state or props change, React re-renders the component and updates the Virtual DOM. React then
+     compares the Virtual DOM to the actual DOM. React then efficiently updates the actual DOM by
+     applying the minimal set of changes needed to reflect the changes to the Virtual DOM. This
+     process is known as reconciliation.
+
+  React Fiber Architecture?
+  React fiber = new reconciliation engine in React 16.
+
+  React Fiber is a new architecture that helps React to handle more complex and larger state
+  management and rendering. It is designed to prioritize work and help in efficient rendering.
+
+Q5. why we need keys in react and when do we need keys in react?
+
+    key will unique represent  the element and help React efficiently update and reconcile the virtual DOM when rendering lists.
+    Key points
+    Efficient Updates:
+        React uses the key prop to identify which items have changed, been added, or been removed.  
+    Preserving Component State:
+    Optimizing DOM Manipulation:
+        Using keys helps React efficiently update the DOM by minimizing the number of manipulations needed. When elements have unique keys, 
+        React can rearrange, insert, or remove elements more intelligently, resulting in better performance.
+
+Q6. Can we use index as keys in react?
+A6. When you don't have stable IDs for rendered items, you may use the item index as a key as a last resort: 
+const todoItems = todos.map ((todo, index) => // 
+Only do this if items have no stable IDs <li key={index}> {todo. Text} </li>);
+ We don't recommend using indexes for keys if the order of items may change.
+We don’t recommend using indexes for keys if the order of items may change. 
+This can negatively impact performance and may cause issues with component state.
+ if you choose not to assign an explicit key to list items then React will default to using indexes as keys.
+
+You are right, there can be issues with using index as key but notice I am saying we can get issues but not always. If we are not adding /removing items from list then it is fine to use index as keys else it will be good to use some id which uniquely identifies the item. Reason is if you add or remove some items from the list, indexes change for older items and react can get confused which items are changed. Performance wise i don't think it makes any difference
+https://robinpokorny.medium.com/index-as-a-key-is-an-anti-pattern-e0349aece318
+
+
+Q7. what is pros in react and ways to use it?
+A7. React components use props to communicate with each other. 
+Every parent component can pass some information to its child components by giving them props. 
+Props might remind you of HTML attributes, but you can pass any JavaScript value through them, including objects, arrays, and functions.
+
+
+Q.8 What is config Driven UI
+
+Config-driven UI is a technique that allows you to create user interfaces based on a configuration file, such as JSON, or a TypeScript file that defines the layout and content of the UI components. 
+This can be useful for creating dynamic and customizable UIs without hard coding them.
+
+In a configuration-driven UI, the layout, styles, and other properties of UI elements are defined in a configuration file or database, which can be easily modified without requiring changes to the codebase. This approach makes it easier to customize the UI for different use cases or user groups, without the need for extensive coding.
+The configuration file or database may also define the data sources and the data to be displayed in the UI, as well as the interactions and behavior of the UI components. This allows for greater flexibility and adaptability of the UI to different use cases, as the configuration data can be easily modified or replaced without affecting the underlying application logic
