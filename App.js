@@ -40,6 +40,7 @@ const heading = <h1 className="head">Namaste React -- JSX 1st code</h1>;
     (<h1> Namaste React using normal function </h1>)
  } 
 const HeadingComponent = () => (
+    // <div> need to commented</div>
     <div id="container">
         <Title />
         
