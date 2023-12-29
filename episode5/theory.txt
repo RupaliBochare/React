@@ -1,0 +1,35 @@
+What is the difference between Named Export, Default export and * as export?
+
+    name export -- we can export multiple values (function, variable classes) from module by explicitly their names.
+    In JavaScript ES6 module system, there are three ways to export a function or variable.
+    1) Named Exports: In this method we can have multiple named exports in one file and import them using their names separately.
+    2.Default Exports: only one value we can export from module.
+
+    // module.js
+    const myFunction = () => { /* ... */ };
+    export default myFunction;
+
+    // anotherModule.js
+    import myFunction from './module';
+    3. * as Export (Namespace Import)
+        This is useful when a module exports many things, 
+        and you want to import them all under a single namespace.
+
+What is the Importance of config.js file?
+ storing configuration settings and parameters. 
+ config.js file is important for maintaining a clean separation of configuration settings from application code, promoting code modularity, 
+ and facilitating better management of configurations across different environments and projects.
+
+
+what are React Hooks?
+
+its function which allow the manage state, handle side effects, and tap into React component life cycle hook.
+useState
+useSideEffects
+usecontext 
+
+Why do we need a useState hook?
+
+    when state variable change react re-render the component.
+    The useState hook allows us to add a piece of state to our functional components so that they have access to it while rendering. It returns an
+    it allows us to add some local data in our functional components that helps maintaining the state of those variables.
