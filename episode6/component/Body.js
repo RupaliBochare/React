@@ -3,9 +3,9 @@ import { cardData } from "../utils/mockData";
 import { useEffect, useState } from "react";
 
 const BodyComponent = () => {
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
   const fetchData = async () => {
     const data = await fetch(
       "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.568729&lng=73.958935&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"

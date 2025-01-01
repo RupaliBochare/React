@@ -1,0 +1,7 @@
+1.What is microservice?
+A microservice architecture refers to a software development methodology that structures an application as a collection of small, independent services that answer specific questions and perform specific
+
+Small independent service, which serve specific business, loosely couple and communicate between service from API.
+
+2. What is Monolith Architecture
+front end , back end and database is all in one service
