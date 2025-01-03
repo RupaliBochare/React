@@ -1,6 +1,7 @@
+//Want to check email asociated with git 
 import RestaurantCard from "./Restaurant";
 import { cardData } from "../utils/mockData";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const BodyComponent = () => {
   // useEffect(() => {
